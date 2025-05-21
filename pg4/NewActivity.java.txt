@@ -1,0 +1,16 @@
+Steps to create activity_new.xml and NewActivity.java files:
+
+app->right click->New->Activity->Empty Views Activity->Type only the name of java file as NewActivity, automatically the name of xml file will be typed by itself
+
+package com.example.program4;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+public class NewActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new);
+    }
+}
