@@ -1,0 +1,28 @@
+package com.example.program5;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+public class MainActivity extends AppCompatActivity {
+    private static final int SPLASH_DISPLAY_LENGTH = 10000;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final View splashScreen = findViewById(R.id.splash_screen);
+        final View mainContent = findViewById(R.id.main_content);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Hide the splash screen and show the main content after the splash duration
+                splashScreen.setVisibility(View.GONE);
+                mainContent.setVisibility(View.VISIBLE);
+            }
+        }, SPLASH_DISPLAY_LENGTH);
+    }
+}
